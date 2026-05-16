@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Thunkable Showcase</title>
+    <!-- Tailwind CSS for easy, clean styling -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white py-10 shadow-md text-center">
+        <h1 class="text-4xl font-bold tracking-tight">Thunkable Project Showcase</h1>
+        <h2 class="text-2xl font-bold tracking-tight">App Development Class</h2>
+        <p class="mt-2 text-indigo-150 text-lg">Check out the amazing apps built by our students!</p>
+    </header>
+
+    <!-- Project Grid Container -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- JavaScript will inject the project cards here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-500 text-sm border-t border-gray-200 mt-12">
+        2026 Classroom Showcase. Built with Thunkable & GitHub Pages.
+    </footer>
+
+    <!-- Logic to dynamically load projects -->
+    <script>
+        async function loadProjects() {
+            try {
+                const response = await fetch('projects.json');
+                const projects = await response.json();
+                const grid = document.getElementById('project-grid');
+
+                projects.forEach(project => {
+                    const card = document.createElement('div');
+                    card.className = "bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col border border-gray-100";
+
+                    card.innerHTML = `
+                        <img class=" w-full object-cover bg-gray-100" src="${project.image}" alt="${project.title} screenshot">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h2 class="text-xl font-bold text-gray-900 mt-1">${project.title}</h2>
+                            <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wider">By ${project.student}</span>
+                            <p class="text-gray-600 mt-2 text-sm flex-grow">${project.description}</p>
+                            <div class="mt-6">
+                                <a href="${project.apkLink}" download class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200">
+                                    Download Android APK
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Error loading projects:", error);
+                document.getElementById('project-grid').innerHTML = '<p class="text-red-500 text-center col-span-full">Failed to load projects. Check console for details.</p>';
+            }
+        }
+
+        // Run on page load
+        loadProjects();
+    </script>
+</body>
+
+</html>

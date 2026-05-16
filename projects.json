@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Monti Green",
+        "student": "Jemari Henry, Tawsif Ahmed, Mohammed Nafi & Ranveer Singh",
+        "description": "Team Montigreen group project",
+        "apkLink": "apks/Montefiore App-v1-release.apk",
+        "image": "images/montigreen.png"
+    },
+    {
+        "title": "Stage Spot",
+        "student": "Faiza Shums,Lori Johnson,Rahia Chowdhury & Zunairah Alquadri",
+        "description": "Team Minion's group project",
+        "apkLink": "apks/Minions_GroupProject-v1-release.apk",
+        "image": "images/stagespot.png"
+    },
+    {
+        "title": "Montefiore Path",
+        "student": "Farhan Sayan, Ismael Bravo, Efren Romero & Jordan Baker ",
+        "description": "Team Farhan - 4 group project",
+        "apkLink": "apks/Montefiore Path-v1-release.apk",
+        "image": "images/Montefiore-Path.png"
+    },
+    {
+        "title": "Quick Solve",
+        "student": "Faiza Shums",
+        "description": "An App that helps you solve arithmetic equations",
+        "apkLink": "apks/QuickSolve-v1-release.apk",
+        "image": "images/quickSolve.png"
+    },
+    {
+        "title": "Recipe Generator",
+        "student": "Rahia Chowdhury",
+        "description": "This app is used to generate recipes for new cooks.",
+        "apkLink": "apks/Recipe Generator-v1-release.apk",
+        "image": "images/Recipe-generator.png"
+    }
+]
